@@ -20,14 +20,14 @@ def fun_val(n, k):
 def check():
     while True:
         n_num, k_num = input('Введи число n: '), input('Введи число k: ')
-        if n_num.isdigit() and k_num.isdigit():
+        try:
             fun_val(float(n_num), float(k_num))
             person = input("Хотите выйти yes or not: ")
             if person == "yes":
                 sys.exit(1)
             else:
                 print("Повторите ввод")
-        else:
+        except:
             print("Ошибка входных данных, повторите ввод")
 
 
