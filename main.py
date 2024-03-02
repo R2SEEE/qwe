@@ -7,26 +7,29 @@ def fun_val(n, k):
     определяеться ли оно кратным 3-ем
     """
     if (n + 2) > k:
-        x = n * k**n - 1
+        x = n * k ** n - 1
         if x % 3 == 0:
             print("полученное число является кратным трём.")
-        print("полученное число не является кратным трём.")
+        else:
+            print("полученное число не является кратным трём.")
 
     else:
         print("данное число не являеться числом Вудала")
 
 
 def check():
-    n_num, k_num = input(), input()
-    if n_num.isinstance() and k_num.isinstance():
-        fun_val(n_num, k_num)
-        print("Хотите выйти yes or not")
-        person = input()
-        if person == "yes":
-            sys.exit(1)
+    while True:
+        n_num, k_num = input('Введи число n: '), input('Введи число k: ')
+        if n_num.isdigit() and k_num.isdigit():
+            fun_val(float(n_num), float(k_num))
+            person = input("Хотите выйти yes or not: ")
+            if person == "yes":
+                sys.exit(1)
+            else:
+                print("Повторите ввод")
         else:
-            print("Повторите ввод")
+            print("Ошибка входных данных, повторите ввод")
 
 
 if "__main__" == __name__:
-    pass
+    check()
