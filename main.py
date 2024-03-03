@@ -2,7 +2,7 @@
 точка
 """
 
-from logical import check
+from practick_1.logical import check
 
 
 def main():
