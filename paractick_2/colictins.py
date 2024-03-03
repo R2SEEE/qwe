@@ -1,4 +1,16 @@
 from random import randint
+import copy
+
+
+def check_input_matrix():
+    while True:
+        person_input_n = input("Введите кол-во столбцов: ")
+        person_input_m = input("Введите кол-во строк: ")
+
+        if person_input_m.isdigit() and person_input_n.isdigit():
+            return int(person_input_n), int(person_input_m)
+        else:
+            print("Ошибка, повторите вход ")
 
 
 def create_matrix(n, m):
@@ -10,5 +22,4 @@ def create_matrix(n, m):
     return result
 
 
-n = int(input("столбцы"))
-m = int(input("строки"))
+# print(create_matrix(*check_input_matrix()))
